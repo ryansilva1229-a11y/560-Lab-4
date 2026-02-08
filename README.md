@@ -13,7 +13,10 @@
 ├── Scripts/
 │ ├── arima.py # Script implementing ARIMA forecasting and signal generation
 │ ├── webscraper2.py # Script to scrape NASDAQ stock data
-│ ├── moving_average.py  # Script for Moving Average implementation
+│ ├── moving_average.py  # Script for computing simple moving average
+│ ├── rsi.py  # Script for computing rsi
+│ ├── sma_rsi.py  # Script for making securities purchase decisions across tickers
+│ ├── main.py  # Script for portfolio management
 ├── README.md 
 
 ## How to Run
@@ -35,11 +38,7 @@ python Scripts/data_collection.py
 - Saves results to 'Data/stocks.csv'
 
 ### 3. Generate Moving Average Forecasts and Trading Signals
-Run the Moving Average forecasting script:
-
-python Scripts/[PUT SCRIPT NAME HERE JORDAN]
-
-**What this script does:**
+This script is run as part of main.py
 
 ### 4. Generate ARIMA Forecasts and Trading Signals
 Run the ARIMA forecasting script:
@@ -55,6 +54,15 @@ python Scripts/arima.py
 - Saves results to 'Data/arima_signals.csv'
 
 ### 5. Mock Trading Environment
+Run main.py
+python main.py <tickers list> <window_size> <timeframe> <initial capital>
+
+**What this script does:**
+- Loads a given list of tickers
+- Computes RSI and SMA across the time series
+- Makes trading decisions based on these metrics
+- Manages the portfolio by making purchases and sales based on computed indicators
+- Outputs final capital, annualized returns, and sharpe ratio
 
 
 
